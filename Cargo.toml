@@ -1,5 +1,5 @@
 [package]
-name = "Rust-Corner"
+name = "rust_corner"
 version = "0.1.0"
 edition = "2018"
 
