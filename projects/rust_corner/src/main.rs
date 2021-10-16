@@ -1,4 +1,8 @@
+#[allow(dead_code)]
+
 mod lib;
+
+#[allow(unused_imports)]
 use crate::lib::sets;
 
 fn main() {
