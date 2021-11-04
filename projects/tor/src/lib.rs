@@ -30,11 +30,11 @@ mod tests {
     let salt_hex = hex::encode(salt);
     println!("salt_hex: {:?}", salt_hex);
 
-    let to_hash = salt_hex.clone() + password;
-    println!("to_hash_hex: {:?}", to_hash);
+    let to_be_hashed = salt_hex.clone() + password;
+    println!("to_be_hashed: {:?}", to_be_hashed);
 
     let mut hasher = Sha1::new();
-    hasher.update(to_hash.as_bytes());
+    hasher.update(to_be_hashed.as_bytes());
     let hashed_password = hasher.finalize();
     let mut hashed_password_hex = hex::encode(&hashed_password);
     hashed_password_hex.insert_str(0, &salt_hex);
