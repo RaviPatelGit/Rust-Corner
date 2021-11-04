@@ -25,7 +25,7 @@ mod tests {
 
     let count: u64 = (16 + (&15)) << ((c >> 4) + EXPBIAS as u64);
 
-    println!("{:?}", count);
+    println!("count: {:?}", count);
 
     let salt_hex = hex::encode(salt);
     println!("salt_hex: {:?}", salt_hex);
@@ -39,7 +39,7 @@ mod tests {
     let mut hashed_password_hex = hex::encode(&hashed_password);
     hashed_password_hex.insert_str(0, &salt_hex);
     hashed_password_hex.insert_str(0, "16:");
-    
+
     assert_eq!(hashed_password_hex, expected);
   }
 }
