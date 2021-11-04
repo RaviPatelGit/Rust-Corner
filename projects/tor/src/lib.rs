@@ -20,11 +20,14 @@ mod tests {
     let mut salt = thread_rng().gen::<[u8; 8]>().to_vec();
     println!("salt: {:?}", salt);
     salt.push(96); // indicator_unicode
-    let c = salt[8] as u64;
+    let c = salt[8] as i32;
     println!("indicator_char: {:?}", char::from_u32(c as u32));
     println!("indicator_unicode: {:?}", c);
 
-    let count: u64 = (16 + ( c & 15 )) << ((c >> 4) + EXPBIAS as u64);
+    let count: i32 = (16 + ( c & 15 )) << ((c >> 4) + EXPBIAS as i32);
+
+    println!("FIRST = {}", ((16 + ( c & 15 ))));
+    println!("SECOND = {}", (((c >> 4) + EXPBIAS as i32)));
 
     println!("count: {:?}", count);
 
