@@ -24,7 +24,7 @@ mod tests {
     println!("indicator_char: {:?}", char::from_u32(c as u32));
     println!("indicator_unicode: {:?}", c);
 
-    let count: u64 = (16 + (c&15)) << ((c >> 4) + EXPBIAS as u64);
+    let count: u64 = (16 + ( c & 15 )) << ((c >> 4) + EXPBIAS as u64);
 
     println!("count: {:?}", count);
 
